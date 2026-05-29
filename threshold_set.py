@@ -53,11 +53,18 @@ def load_and_refresh(new_idx):
     x, y = load_profile(files[idx])
     line.set_xdata(x)
     line.set_ydata(y)
-    ax.relim(); ax.autoscale_view()
+
+    # Set y limits based on signal range with a small padding
+    padding = (y.max() - y.min()) * 0.1
+    ax.set_ylim(y.min() - padding, y.max() + padding)
+    ax.set_xlim(x.min(), x.max())
+
+    # Reset threshold slider range to this profile
     slider.valmin = y.min()
     slider.valmax = y.max()
     slider.set_val(y.mean())
     ax_slider.set_xlim(y.min(), y.max())
+
     update_plot(x, y, y.mean(), slider_d.val)
 
 slider.on_changed(lambda val: update_plot(x, y, val, slider_d.val))
