@@ -5,6 +5,13 @@ if (nImages == 0) {
     exit("No image open. Please open a kymograph first.");
 }
 
+if (selectionType() != 5) {
+    exit("No line ROI detected. Please draw a line on the image first.");
+}
+
+imageTitle = getTitle();
+run("KymographBuilder", "input=" + imageTitle);
+
 // Work on the current image
 originalTitle = getTitle();
 originalID = getImageID();

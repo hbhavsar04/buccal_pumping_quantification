@@ -1,4 +1,4 @@
-outputDir = "/Users/msbl/Desktop/Hayden/kymograph_output/";
+outputDir = "/Users/msbl/Desktop/kymograph_output/";
 
 // Check a line ROI is drawn
 if (selectionType() != 5) {

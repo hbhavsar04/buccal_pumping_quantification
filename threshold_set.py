@@ -5,7 +5,7 @@ from scipy.signal import find_peaks
 import glob, csv
 
 # --- Load all profiles ---
-files = sorted(glob.glob("/Users/msbl/Desktop/Hayden/kymograph_output/*.txt"))
+files = sorted(glob.glob("/Users/msbl/Desktop/kymograph_output/*.txt"))
 results = {}
 
 idx = 0
